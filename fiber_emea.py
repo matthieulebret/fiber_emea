@@ -18,8 +18,8 @@ st.title("Fiber in EMEA")
 
 st.header("Deals")
 
-# bigdf = pd.DataFrame()
-#
+bigdf = pd.DataFrame()
+
 # for i in range(1,10):
 #     with open('transactions_'+str(i)+'.json',encoding='utf-8') as data_file:
 #         data = json.load(data_file)
@@ -27,11 +27,18 @@ st.header("Deals")
 #         df = pd.json_normalize(data)
 #         bigdf = pd.concat([bigdf,df])
 #
+# for i in range(1,5):
+#     with open('di_'+str(i)+'.json',encoding='utf-8') as data_file:
+#         data = json.load(data_file)
+#         data = data['transactions']
+#         df = pd.json_normalize(data)
+#         bigdf = pd.concat([bigdf,df])
 #
-# # bigdf.to_excel('fiber_deals.xlsx')
+#
+# bigdf.to_excel('digital_infra.xlsx')
 # bigdf
 
-bigdf = pd.read_excel('fiber_deals.xlsx')
+bigdf = pd.read_excel('digital_infra.xlsx')
 
 countries = bigdf['dominantCountry'].unique().tolist()
 countries.sort()
